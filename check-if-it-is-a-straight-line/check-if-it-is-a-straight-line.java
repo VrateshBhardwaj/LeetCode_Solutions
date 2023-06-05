@@ -2,14 +2,20 @@ class Solution
 {
     public boolean checkStraightLine(int[][] coordinates) 
     {
-        // double slope = (coordinates[0][0]-coordinates[1][0])/(coordinates[0][1]-coordinates[1][1]);
-		
+			
 		boolean lieOnLine = true;
 		
 		for(int i=2;i<coordinates.length;i++)
 		{
-			// double currSlope = (coordinates[0][1] - coordinates[i][1]) / (double) (coordinates[0][0] - coordinates[i][0]);
-				if((coordinates[1][0] - coordinates[0][0]) * (coordinates[i][1] - coordinates[0][1]) != (coordinates[1][1] - coordinates[0][1]) * (coordinates[i][0] - coordinates[0][0]))
+
+			      int x1 = coordinates[0][0];
+            int y1 = coordinates[0][1];
+            int x2 = coordinates[1][0];
+            int y2 = coordinates[1][1];
+            int x  = coordinates[i][0];
+            int y  = coordinates[i][1];
+			
+				if((x2 - x1) * (y - y1) != (y2 - y1) * (x - x1))
 				{
 					lieOnLine = false;
 					break;
