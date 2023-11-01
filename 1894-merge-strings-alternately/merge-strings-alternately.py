@@ -11,7 +11,7 @@ class Solution(object):
         i=0
         j=0
 
-        while(i<len_word_1 and j<len_word_2):
+        while(i<len_word_1) and (j<len_word_2):
             result += word1[i]
             result += word2[j]
 
