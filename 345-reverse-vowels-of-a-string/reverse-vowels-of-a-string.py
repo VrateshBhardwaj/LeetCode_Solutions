@@ -4,27 +4,24 @@ class Solution(object):
         :type s: str
         :rtype: str
         """
-        index = 0
-        i = 0
-        ch = ''
-        vowel_index = []
-        vowels = ['a','e','i','o','u','A','E','I','O','U']
-        for ch in s:
-            if ch in vowels:
-                vowel_index.append(index)
-            index += 1
-        
-        
+        vowels = 'aAeEiIoOuU'
         string_list = list(s)
-        
-        for ch in s:
-            if ch.lower() in vowels:
-                temp = s[vowel_index[-1-i]]
-                string_list[vowel_index[i]] = string_list[vowel_index[-1-i]]
-                string_list[vowel_index[i]] = temp
-                i+=1
 
-        s = ''.join(string_list) 
+        left_index = 0
+        right_index = len(s) - 1
 
-        return s
+        while left_index < right_index:
+
+            if string_list[left_index] in vowels and string_list[right_index] in vowels:
+
+                string_list[left_index], string_list[right_index] = string_list[right_index], string_list[left_index]
+                left_index += 1
+                right_index -= 1
+            elif string_list[left_index] not in vowels:
+                left_index += 1
+
+            elif string_list[right_index] not in vowels:
+                right_index -= 1
+                
+        return ''.join(string_list) 
         
