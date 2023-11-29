@@ -1,8 +1,11 @@
 class Solution(object):
 
-    def decimalToBinary (self, n):
+    def hammingWeight(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
         count  = 0
-        #string_binary = []
 
         while n > 0:
             bits = n % 2
@@ -11,13 +14,5 @@ class Solution(object):
                 count += 1
         
         return count
-
-    def hammingWeight(self, n):
-        """
-        :type n: int
-        :rtype: int
-        """
-        hammingweight = self.decimalToBinary(n)
-        return hammingweight
 
     
