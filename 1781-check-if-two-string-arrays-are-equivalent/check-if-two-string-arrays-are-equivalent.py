@@ -14,12 +14,8 @@ class Solution(object):
         for ch in word2:
             str_word2 += ch
         
-        return self.isEqual(str_word2, str_word1)
+        return str_word1 == str_word2
     
-    def isEqual(self, str_word1, str_word2):
-        if str_word1 == str_word2:
-            return True
-        else:
-            return False
+    
             
         
