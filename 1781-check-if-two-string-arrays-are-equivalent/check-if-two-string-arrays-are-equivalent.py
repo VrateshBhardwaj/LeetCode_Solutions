@@ -5,14 +5,8 @@ class Solution(object):
         :type word2: List[str]
         :rtype: bool
         """
-        str_word1 = ''
-        str_word2 = ''
-
-        for ch in word1:
-            str_word1 += ch
-
-        for ch in word2:
-            str_word2 += ch
+        str_word1 = ''.join(word1)
+        str_word2 = ''.join(word2)
         
         return str_word1 == str_word2
     
