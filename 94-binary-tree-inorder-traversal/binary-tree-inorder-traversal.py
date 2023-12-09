@@ -10,13 +10,13 @@ class Solution(object):
         :type root: TreeNode
         :rtype: List[int]
         """
-        res, stack = [], []
-        while True:
-            while root:
-                stack.append(root)
-                root = root.left
-            if not stack:
-                return res
-            node = stack.pop()
-            res.append(node.val)
-            root = node.right
+        list = []
+        self.inorderHelper(root, list)
+        return list
+        
+    def inorderHelper(self, root, list):
+         if root:
+            self.inorderHelper(root.left, list)
+            list.append(root.val)
+            self.inorderHelper(root.right, list)
+
