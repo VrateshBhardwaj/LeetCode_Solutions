@@ -12,6 +12,3 @@ class Solution(object):
                 list[j][i] = matrix[i][j] 
 
         return list
-
-
-        
