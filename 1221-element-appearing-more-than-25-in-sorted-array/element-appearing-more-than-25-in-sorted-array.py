@@ -1,15 +1,24 @@
 class Solution(object):
     def findSpecialInteger(self, arr):
-        result = 0
-        array_length = len(arr)
-        quarter = array_length // 4
-        
-        for i in range(array_length):
-            
-            last_occurance = float(array_length - arr[::-1].index(arr[i]) - 1)
-            difference= ((last_occurance - arr.index(arr[i]))+1)
-            
 
-            if difference > quarter:
-                return arr[i]
+        arrayLength = len(arr)
+        quarter = arrayLength // 4
+        result = 0
+        lastIndex = 0
+        firstIndex = 0  
+        i = 0
         
+        for i, elem in enumerate(arr):
+
+            if elem == arr[firstIndex]:
+                lastIndex = i  
+            else:
+                firstIndex = i  
+
+            difference = lastIndex - firstIndex
+            
+            if difference  >= quarter:
+                result = elem
+                break
+
+        return result
