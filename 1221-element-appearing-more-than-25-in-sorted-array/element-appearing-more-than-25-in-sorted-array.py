@@ -1,14 +1,8 @@
 class Solution(object):
     def findSpecialInteger(self, arr):
+        array_length = len(arr)
+        quarter_length = array_length // 4
 
-        arrayLength = len(arr)
-        quarter = arrayLength // 4
-        result = 0
-
-        for elem in arr:
-            firstIndex = float(arr.index(elem)) # finds first index
-            lastIndex = arrayLength - arr[::-1].index(elem) - 1 #finds last index
-            difference = (lastIndex - firstIndex) 
-            
-            if difference  >= quarter:
-                return int(elem)
+        for i in range(array_length - quarter_length):
+            if arr[i] == arr[i + quarter_length]:
+                return arr[i]
