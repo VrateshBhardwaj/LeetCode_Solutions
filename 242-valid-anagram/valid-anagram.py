@@ -24,9 +24,6 @@ class Solution(object):
             else:
                 frequency_str2.update({ch:frequency_str2.get(ch)+1})
 
-        for ch in t:
-            if frequency_str1.get(ch) != frequency_str2.get(ch):
-                anagram = False
-                break
+        return frequency_str1 == frequency_str2
 
-        return anagram
+        #return anagram
