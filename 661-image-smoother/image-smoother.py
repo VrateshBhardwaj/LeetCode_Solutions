@@ -21,7 +21,7 @@ class Solution(object):
                         sum += img[new_i][new_j]
                         pixel_count += 1
 
-                updated_img[i][j] = sum / pixel_count
+                updated_img[i][j] = sum // pixel_count
 
         return updated_img
         
