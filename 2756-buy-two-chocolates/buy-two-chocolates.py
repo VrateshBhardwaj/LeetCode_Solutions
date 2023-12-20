@@ -1,49 +1,23 @@
-class Solution(object):
+class Solution(object): 
 
-    def merge_sort(self, prices):
-        
-        if len(prices) > 1:
-            left_arr = prices[:len(prices)//2]
-            right_arr = prices[len(prices)//2:]
-
-            self.merge_sort(left_arr)
-            self.merge_sort(right_arr)
-
-            i = 0
-            j = 0
-            k = 0
-            
-            while i < len(left_arr) and j < len(right_arr):
-                if left_arr[i] < right_arr[j]:
-                    prices[k] = left_arr[i]
-                    i += 1
-                
-                else:
-                    prices[k] = right_arr[j]
-                    j += 1
-                
-                k += 1
-            
-            while i < len(left_arr):
-                prices[k] = left_arr[i]
-                i += 1
-                k += 1
-
-            while j < len(right_arr):
-                prices[k] = right_arr[j]
-                j += 1
-                k += 1
-
-        return prices
-
+    def smallest(self, prices, s):
+        for price in prices:
+            if price < s:
+                 s = price
+        return s
+               
     def buyChoco(self, prices, money):
 
-        prices = self.merge_sort(prices)
+        s1 = 1000
+        s2 = 1000
 
-        smallest = prices[0]
-        second_smallest = prices[1]
+        s1= self.smallest(prices, s1)
+        prices.remove(s1)
 
-        sum = smallest + second_smallest
+        s2 =self.smallest(prices, s2)
+        prices.remove (s2)
+
+        sum = s1+s2
 
         if sum <= money:
             return money - sum
