@@ -27,7 +27,6 @@ class Solution(object):
             if ch != str2[i]:
                 changes2 += 1
 
-        print(str1, str2)
         return min(changes1, changes2)
 
 
