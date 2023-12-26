@@ -12,13 +12,9 @@ class Solution(object):
         for i in range(0, n):
             if (i % 2 == 0):
                 str1 += '0'
-            if(i % 2 != 0):
-                str1 +='1'
-
-        for i in range(0, n):
-            if (i % 2 == 0):
                 str2 += '1'
             if(i % 2 != 0):
+                str1 +='1'
                 str2 += '0'
         
         for i, ch in enumerate(s):
